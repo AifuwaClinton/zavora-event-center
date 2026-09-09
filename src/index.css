@@ -1,0 +1,26 @@
+/* Load Zavora fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+
+
+@theme{
+  
+  --color-primary:#C9A45C; 
+
+  /* Font for normal text, navigation, buttons, etc.*/
+  --font-sans:"Manrope",sans-serif;
+
+   /* Font for large headings and elegant titles */
+   --font-display: "Playfair Display", serif;
+}
+
+@media (max-height: 650px){
+  .hero-content {
+    transform:;
+  }
+}

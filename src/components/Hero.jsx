@@ -22,11 +22,13 @@ const Hero = () => {
         })
       }
 
-      // Wait until the video is ready to play
+      // iOS may expose a usable video before canplay fires.
+      video.addEventListener('loadedmetadata', playVideo)
       video.addEventListener('canplay', playVideo)
 
       // Remove the event listener when the component is removed
       return () => {
+        video.removeEventListener('loadedmetadata', playVideo)
         video.removeEventListener('canplay', playVideo)
       }
     }
@@ -40,6 +42,8 @@ const Hero = () => {
        src={assets.ExteriorVideo}
         autoPlay
         muted
+      defaultMuted
+      preload='auto'
         loop
         playsInline
         aria-hidden='true'

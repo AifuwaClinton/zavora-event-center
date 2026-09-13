@@ -9,7 +9,7 @@ const Hero = () => {
     const video = videoRef.current
 
     if (video) {
-      video.play().catch(() => {
+      video.play().catch((error) => {
         console.log('Video autoplay was blocked:', error)
       })
     }
@@ -19,6 +19,7 @@ const Hero = () => {
 
       {/* Background video */}
       <video
+      ref={videoRef}
        src={assets.ExteriorVideo}
         autoPlay
         muted

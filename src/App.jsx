@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import About from './components/About'
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
             {/* websites navigation */}
             <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
             <Hero/>
+            <About/>
         </div>
     )
 }

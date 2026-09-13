@@ -3,29 +3,15 @@ import assets from '../assets/assets'
 
 const Hero = () => {
 
-  // Creates a reference to the video element
   const videoRef = useRef(null)
 
   useEffect(() => {
     const video = videoRef.current
 
-    if (!video) return
-
-    // Make sure the video is muted before trying to play
-    video.muted = true
-
-    // Ask the browser to start playing the video
-    const playVideo = () => {
+    if (video) {
       video.play().catch(() => {
-        console.log('Video could not autoplay')
+        console.log('Video autoplay was blocked:', error)
       })
-    }
-
-    // Try to play when the video has loaded enough data
-    video.addEventListener('canplay', playVideo)
-
-    return () => {
-      video.removeEventListener('canplay', playVideo)
     }
   }, [])
   return (
@@ -33,7 +19,6 @@ const Hero = () => {
 
       {/* Background video */}
       <video
-      ref={videoRef}
        src={assets.ExteriorVideo}
         autoPlay
         muted

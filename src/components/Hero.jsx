@@ -14,6 +14,10 @@ const Hero = () => {
 
       // Make sure the video is muted
       video.muted = true
+      video.defaultMuted = true
+      video.setAttribute('muted', '')
+      video.setAttribute('playsinline', '')
+      video.setAttribute('autoplay', '')
 
       // Function that starts the video
       const playVideo = () => {
@@ -22,13 +26,13 @@ const Hero = () => {
         })
       }
 
-      // iOS may expose a usable video before canplay fires.
-      video.addEventListener('loadedmetadata', playVideo)
+      // Try again once Safari has loaded enough data for playback.
+      video.addEventListener('loadeddata', playVideo)
       video.addEventListener('canplay', playVideo)
 
       // Remove the event listener when the component is removed
       return () => {
-        video.removeEventListener('loadedmetadata', playVideo)
+        video.removeEventListener('loadeddata', playVideo)
         video.removeEventListener('canplay', playVideo)
       }
     }

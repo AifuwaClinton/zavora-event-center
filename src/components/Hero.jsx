@@ -6,35 +6,26 @@ const Hero = () => {
   // Creates a reference to the video element
   const videoRef = useRef(null)
 
-  // Wait for the video to be ready before trying to play it
   useEffect(() => {
     const video = videoRef.current
 
-    if (video) {
+    if (!video) return
 
-      // Make sure the video is muted
-      video.muted = true
-      video.defaultMuted = true
-      video.setAttribute('muted', '')
-      video.setAttribute('playsinline', '')
-      video.setAttribute('autoplay', '')
+    // Make sure the video is muted before trying to play
+    video.muted = true
 
-      // Function that starts the video
-      const playVideo = () => {
-        video.play().catch(() => {
-          console.log('Video autoplay was blocked')
-        })
-      }
+    // Ask the browser to start playing the video
+    const playVideo = () => {
+      video.play().catch(() => {
+        console.log('Video could not autoplay')
+      })
+    }
 
-      // Try again once Safari has loaded enough data for playback.
-      video.addEventListener('loadeddata', playVideo)
-      video.addEventListener('canplay', playVideo)
+    // Try to play when the video has loaded enough data
+    video.addEventListener('canplay', playVideo)
 
-      // Remove the event listener when the component is removed
-      return () => {
-        video.removeEventListener('loadeddata', playVideo)
-        video.removeEventListener('canplay', playVideo)
-      }
+    return () => {
+      video.removeEventListener('canplay', playVideo)
     }
   }, [])
   return (
@@ -46,8 +37,6 @@ const Hero = () => {
        src={assets.ExteriorVideo}
         autoPlay
         muted
-      defaultMuted
-      preload='auto'
         loop
         playsInline
         aria-hidden='true'

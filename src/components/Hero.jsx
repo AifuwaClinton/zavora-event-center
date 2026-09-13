@@ -9,7 +9,7 @@ const Hero = () => {
     const video = videoRef.current
 
     if (video) {
-      video.play().catch(() => {
+      video.play().catch((error) => {
         console.log('Video autoplay was blocked:', error)
       })
     }
@@ -18,7 +18,9 @@ const Hero = () => {
     <section className='relative min-h-[100svh] w-full overflow-hidden'>
 
       {/* Background video */}
-      <video src={assets.ExteriorVideo}
+      <video
+      ref={videoRef}
+       src={assets.ExteriorVideo}
         autoPlay
         muted
         loop

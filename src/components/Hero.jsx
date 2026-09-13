@@ -3,15 +3,32 @@ import assets from '../assets/assets'
 
 const Hero = () => {
 
+  // Creates a reference to the video element
   const videoRef = useRef(null)
 
+  // Wait for the video to be ready before trying to play it
   useEffect(() => {
     const video = videoRef.current
 
     if (video) {
-      video.play().catch((error) => {
-        console.log('Video autoplay was blocked:', error)
-      })
+
+      // Make sure the video is muted
+      video.muted = true
+
+      // Function that starts the video
+      const playVideo = () => {
+        video.play().catch((error) => {
+          console.log('Video autoplay was blocked:', error)
+        })
+      }
+
+      // Wait until the video is ready to play
+      video.addEventListener('canplay', playVideo)
+
+      // Remove the event listener when the component is removed
+      return () => {
+        video.removeEventListener('canplay', playVideo)
+      }
     }
   }, [])
   return (

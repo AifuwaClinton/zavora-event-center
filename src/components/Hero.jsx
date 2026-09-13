@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import assets from '../assets/assets'
 
 const Hero = () => {
 
   // Creates a reference to the video element
   const videoRef = useRef(null)
-  const [videoBlocked, setVideoBlocked] = useState(false)
 
   // Wait for the video to be ready before trying to play it
   useEffect(() => {
@@ -18,7 +17,9 @@ const Hero = () => {
 
       // Function that starts the video
       const playVideo = () => {
-        video.play().then(() => setVideoBlocked(false)).catch(() => setVideoBlocked(true))
+        video.play().catch(() => {
+          console.log('Video autoplay was blocked')
+        })
       }
 
       // iOS may expose a usable video before canplay fires.
@@ -49,16 +50,6 @@ const Hero = () => {
         className='absolute inset-0 h-full w-full object-cover '>
 
       </video>
-
-      {videoBlocked && (
-        <button
-          type='button'
-          onClick={() => videoRef.current?.play().then(() => setVideoBlocked(false)).catch(() => setVideoBlocked(true))}
-          className='absolute bottom-6 left-1/2 z-20 -translate-x-1/2 rounded-full bg-white px-5 py-3 font-sans text-sm font-semibold text-gray-900 shadow-lg'
-        >
-          Play video
-        </button>
-      )}
 
       {/* Dark overlay */}
       <div className='absolute inset-0 bg-black/35'></div>

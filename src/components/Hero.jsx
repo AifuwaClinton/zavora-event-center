@@ -37,7 +37,7 @@ const Hero = () => {
       {/* Background video */}
       <video
       ref={videoRef}
-       src={assets.ExteriorVideo}
+       src={assets.InteriorVideo}
         autoPlay
         muted
         loop

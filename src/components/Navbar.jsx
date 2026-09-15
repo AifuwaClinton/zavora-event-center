@@ -21,8 +21,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 <div className='hidden lg:flex items-center gap-8'>
                     <a href="#home" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Home</a>
                     <a href="#about" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>About</a>
-                    <a href="#venues" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Venues</a>
-                    <a href="#events" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Events</a>
+                    <a href="#services" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Services</a>
                     <a href="#gallery" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Gallery</a>
                     <a href="#contact" className='text-sm font-medium  text-gray-700 transition  hover:text-primary dark:text-gray-300 dark:hover:text-primary'>Contact</a>
                 </div>
@@ -38,7 +37,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
                     {/* primary call-to-action */}
                     <a
-                        href="#bookings" className='hidden lg:flex text-sm font-medium px-5 py-2.5 rounded-full bg-primary text-white hover:bg-primary/90 transition'>
+                        href="#make-inquiry" className='hidden lg:flex text-sm font-medium px-5 py-2.5 rounded-full bg-primary text-white hover:bg-primary/90 transition'>
                         Book Now
                     </a>
 
@@ -57,13 +56,12 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 <div className='flex flex-col  gap-1'>
                     <a href="#home" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Home</a>
                     <a href="#about" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>About</a>
-                    <a href="#venues" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Venues</a>
-                    <a href="#events" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Events</a>
+                    <a href="#services" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Services</a>
                     <a href="#gallery" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Gallery</a>
                     <a href="#contact" onClick={() => setMenuOpen (false)} className='rounded-lg px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/10 dark:hover:text-primary'>Contact</a>
 
                     <div className='my-3 border-t border-gray-200 dark:border-gray-800'>
-                    <a href="#bookings" onClick={() => setMenuOpen (false)} className='mx-auto block w-fit rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold text-white  transition-all duration-300 hover:bg-primary/90 hover:shadow-md'>Book Now</a>
+                    <a href="#make-inquiry" onClick={() => setMenuOpen (false)} className='mx-auto block w-fit rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold text-white  transition-all duration-300 hover:bg-primary/90 hover:shadow-md'>Book Now</a>
                     </div>
                 </div>
             </div>

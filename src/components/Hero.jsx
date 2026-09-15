@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import assets from '../assets/assets'
 
-const Hero = () => {
+const Hero = ({ loading }) => {
 
   const videoRef = useRef(null)
 
@@ -15,12 +15,13 @@ const Hero = () => {
     }
   }, [])
   return (
-    <section className='relative min-h-[100svh] w-full overflow-hidden'>
+    <section id='home'
+      className='relative min-h-[100svh] w-full overflow-hidden '>
 
       {/* Background video */}
       <video
-      ref={videoRef}
-       src={assets.ExteriorVideo}
+        ref={videoRef}
+        src={assets.ExteriorVideo}
         autoPlay
         muted
         loop
@@ -36,7 +37,8 @@ const Hero = () => {
       {/* Hero content */}
       <div className='relative z-10 flex min-h-[100svh] items-center justify-center px-4 py-24 sm:px-6 md:px-8 lg:px-12'>
 
-        <div className='w-full max-w-3xl'>
+        {/* Hero text and buttons entrance */}
+        <div className={`w-full max-w-3xl ${!loading ? 'hero-content-entrance' : ''} `}>
 
           <p className='mb-3 text-xs font-sans font-medium uppercase tracking-[0.2em] text-white sm:text-sm'>
             Premium Event Experience
@@ -53,9 +55,9 @@ const Hero = () => {
 
           <div className='mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row'>
 
-            <a href="#venues"
+            <a href="#gallery"
               className='min-w-40 rounded-full bg-primary px-7 py-3 font-sans text-sm font-semibold text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-lg  '>
-              Explore Venues
+              Explore Gallery
             </a>
 
             <a href="#contact"

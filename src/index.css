@@ -8,19 +8,107 @@
 
 
 
-@theme{
-  
-  --color-primary:#C9A45C; 
+@theme {
+
+  --color-primary: #C9A45C;
 
   /* Font for normal text, navigation, buttons, etc.*/
-  --font-sans:"Manrope",sans-serif;
+  --font-sans: "Manrope", sans-serif;
 
-   /* Font for large headings and elegant titles */
-   --font-display: "Playfair Display", serif;
+  /* Font for large headings and elegant titles */
+  --font-display: "Playfair Display", serif;
 }
 
-@media (max-height: 650px){
-  .hero-content {
-    transform:;
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+@keyframes growLine {
+  from {
+    width: 0;
   }
+
+  to {
+    width: 4rem;
+  }
+}
+
+@keyframes logoEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes taglineEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.tagline-entrance{
+  opacity: 0;
+  animation: taglineEntrance 1s ease-out 1.2s forwards ;
+}
+
+@keyframes loadingExit {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+}
+
+.loading-exit{
+  animation: loadingExit 1s ease-out forwards;
+}
+
+@keyframes heroContentEntrance {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+
+        to {
+           opacity: 1;
+           transform: translateY(0);
+        }
+}
+
+/* Brings the Hero content gently into view after the loading screen */
+.hero-content-entrance{
+  animation: heroContentEntrance 1s ease-out 0.3s both;
+}
+
+@keyframes aboutImageReveal {
+   from {
+    opacity: 0;
+    transform: translateY(20px);
+   }
+
+   to {
+    opacity: 1;
+    transform: translateY(0);
+   }
+}
+/* Gently reveals the About image when it enters the page */
+.about-image-reveal{
+  animation: aboutImageReveal 1s ease-out both;
 }

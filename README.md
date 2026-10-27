@@ -1,16 +1,41 @@
-# React + Vite
+Zavora Event Centre
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zavora Event Centre is a responsive website designed to showcase an event venue, its facilities, and booking information.
 
-Currently, two official plugins are available:
+Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://zavora-event-center.vercel.app
 
-## React Compiler
+Technologies Used
+	•	React
+	•	JavaScript
+	•	Tailwind CSS
+	•	Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features
+	•	Responsive design for mobile and desktop screens
+	•	Event venue and facilities information
+	•	Booking information for visitors
+	•	Day and night mode toggle
+	•	Interactive user interface
 
-## Expanding the ESLint configuration
+What I Learned
+	•	Building user interfaces with React components
+	•	Managing component state using React’s useState
+	•	Creating responsive layouts with Tailwind CSS
+	•	Implementing a day and night mode toggle
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Getting Started
+
+To run this project locally:
+	1.	Clone this repository.
+	2.	Open the project folder in your terminal.
+	3.	Install the dependencies using npm install.
+	4.	Start the development server using npm run dev.
+	5.	Open the local address shown in your terminal.
+
+Author
+
+Clinton Aifuwa Uyiosa
+
+GitHub: https://github.com/AifuwaClinton
